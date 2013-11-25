@@ -1,7 +1,9 @@
+;;设置威utf8
+
 ;;-------- 外观设置 --------
 ;; basic setting
 (tool-bar-mode 0) ;;隐藏工具栏
-(scroll-bar-mode 0) ;; 隐藏滑动条
+(scroll-bar-mode 0) ;;设置
 
 ;;设置半透明 这里按f1能在半透明之间转换
 (global-set-key [(f1)] 'loop-alpha)  ;;注意这行中的F1 , 可以改成你想要的按键    
@@ -19,18 +21,20 @@
     )    
 )
 
-;;-------- 主题设置 --------
+;;-------- 主题设置 -------- 
  (set-foreground-color "dark goldenrod")
  (set-background-color "linen")
  (set-cursor-color "gold3")
  (set-mouse-color "gold3")
-
+;;设置字体
+;;设置等宽
+;; (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Zen Hei" . 1.2)))
 ;;启动设置
  ;;(setq default-frame-alist  '((vertical-scroll-bars)   (top . 25)    (left . 45) (width . 180)  (height . 55)
  ;;(background-color . "black") (foreground-color . "grey")(cursor-color     . "gold1") (mouse-color      . "gold1")  (tool-bar-lines . 0)  (menu-bar-lines . 1)  (right-fringe)   (left-fringe)))
 
  ;;启动自动最大化(数据自己调整，注意格式，如(top . 0)，圆点前后都要留有空格)
- ;;(setq initial-frame-alist '((top . 0) (left . 0) (width . 130 ) (height . 120)))
+ (setq initial-frame-alist '((top . 0) (left . 0) (width . 120 ) (height . 35)))
   
  ;; 设置另外一些颜色：语法高亮显示的背景和主题，区域选择的背景和主题，二次选择的背景和选择
 ;; (set-face-foreground 'highlight "dark goldenrod")
@@ -77,8 +81,8 @@
 ;; Fonts setting
 ;; 设置两个字体变量，一个中文的一个英文的
 ;; 之所以两个字体大小是因为有的中文和英文相同字号的显示大小不一样，需要手动调整一下。
-(setq cjk-font-size 18)
-(setq ansi-font-size 18)
+(setq cjk-font-size 16)
+(setq ansi-font-size 16)
 
 ;; 设置一个字体集，用的是create-fontset-from-fontset-spec内置函数
 ;; 中文一个字体，英文一个字体混编。显示效果很好。
@@ -93,7 +97,7 @@
     ;; (format "unicode:-outline-文泉驿等宽微米黑-normal-normal-normal-sans-*-*-*-*-p-*-gb2312.1980-0," cjk-font-size)
     ;; (format "chinese-gb2312:-outline-文泉驿等宽微米黑-normal-normal-normal-sans-*-*-*-*-p-*-gb2312.1980-0," cjk-font-size)
     )))
-
+ 
 ;; 函数字体增大，每次增加2个字号，最大48号
 (defun increase-font-size()
   "increase font size"
@@ -145,7 +149,8 @@
       (global-set-key (kbd "C-=") 'increase-font-size) ;Ctrl+=
       ))
 
+
 ;;询问是否递归的复制子目录
-( dired-recursive-copies top)
- 
+;;( dired-recursive-copies top)
+
 ;;-------- 结束操作习惯 --------
